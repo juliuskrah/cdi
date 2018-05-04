@@ -5,13 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.juliuskrah</groupId>
 	<artifactId>CDI</artifactId>
-	<name>WildFly Swarm Example</name>
+	<name>CDI WildFly Swarm Example</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
 		<version.h2>1.4.197</version.h2>
-		<version.wildfly.swarm>2018.4.1</version.wildfly.swarm>
+		<version.wildfly.swarm>2018.5.0</version.wildfly.swarm>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
