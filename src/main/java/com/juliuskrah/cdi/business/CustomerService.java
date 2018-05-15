@@ -3,13 +3,10 @@ package com.juliuskrah.cdi.business;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
 import javax.enterprise.event.TransactionPhase;
-import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
@@ -21,22 +18,15 @@ import com.juliuskrah.cdi.entity.Customer;
 import com.juliuskrah.cdi.repository.CustomerRepository;
 
 @Transactional
-@ApplicationScoped
 public class CustomerService {
 	private CustomerRepository customerRepository;
 	private CustomerMapper mapper;
-
-	@Inject
 	private Logger log;
-
-	@Inject
 	private Event<CustomerBean> customerEventSrc;
 	private List<CustomerBean> customers;
 
-	public CustomerService() {
-	}
-
-	@Inject
+	public CustomerService() {}
+	
 	public CustomerService(CustomerRepository customerRepository, CustomerMapper mapper) {
 		this.customerRepository = customerRepository;
 		this.mapper = mapper;
@@ -60,7 +50,6 @@ public class CustomerService {
 	// in the UI (e.g.
 	// Facelets or JSP view)
 	@Named
-	@Produces
 	public List<CustomerBean> getCustomers() {
 		return customers;
 	}

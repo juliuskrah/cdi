@@ -4,20 +4,15 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import com.juliuskrah.cdi.entity.Customer;
 
-@ApplicationScoped
 public class CustomerRepository {
 	private EntityManager em;
 
-	public CustomerRepository() {
-	}
+	public CustomerRepository() {}
 
-	@Inject
 	public CustomerRepository(EntityManager em) {
 		this.em = em;
 	}
