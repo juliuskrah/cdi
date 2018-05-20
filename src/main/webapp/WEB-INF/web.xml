@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.omnifaces.FACES_VIEWS_SCAN_PATHS</param-name>
+		<param-value>/*.xhtml</param-value> <!-- Enable extensionless URLs on entire webapp. -->
+	</context-param>
+
+	<!-- Filters. NOTE: ordering of filter-mapping matters! -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.omnifaces.filter.CharacterEncodingFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>facesExceptionFilter</filter-name>
+		<filter-class>org.omnifaces.filter.FacesExceptionFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>gzipResponseFilter</filter-name>
+		<filter-class>org.omnifaces.filter.GzipResponseFilter</filter-class>
+	</filter>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>facesExceptionFilter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>gzipResponseFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+</web-app>

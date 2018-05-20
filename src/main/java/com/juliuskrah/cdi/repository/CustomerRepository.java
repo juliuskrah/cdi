@@ -1,21 +1,22 @@
 package com.juliuskrah.cdi.repository;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import com.juliuskrah.cdi.entity.Customer;
 
-@ApplicationScoped
-public class CustomerRepository {
+@SessionScoped
+public class CustomerRepository implements Serializable {
+	private static final long serialVersionUID = 4797319546157041457L;
 	private EntityManager em;
 
-	public CustomerRepository() {
-	}
+	public CustomerRepository() {}
 
 	@Inject
 	public CustomerRepository(EntityManager em) {

@@ -3,43 +3,35 @@ package com.juliuskrah.cdi.business.dto;
 import java.io.Serializable;
 import java.util.UUID;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.ws.rs.FormParam;
 
 @Named("customer")
+@RequestScoped
 public class CustomerBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private UUID id;
 	@NotNull
 	@Size(min = 3, max = 100)
-	@FormParam("firstName")
 	private String firstName;
 	@NotNull
 	@Size(min = 3, max = 100)
-	@FormParam("lastName")
 	private String lastName;
 	@Size(max = 25)
-	@FormParam("middleInitial")
 	private String middleInitial;
 	@Size(max = 100)
-	@FormParam("street")
 	private String street;
 	@Size(max = 100)
-	@FormParam("city")
 	private String city;
 	@Size(max = 100)
-	@FormParam("state")
 	private String state;
-	@FormParam("zip")
 	private Integer zip;
 	@Size(max = 10)
-	@FormParam("telephone")
 	private String telephone;
 	@Size(max = 100)
-	@FormParam("email")
 	private String email;
 
 	public UUID getId() {
