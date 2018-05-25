@@ -1,6 +1,8 @@
 package com.juliuskrah.cdi.business;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -56,7 +58,8 @@ public class CustomerService {
 		return customer;
 	}
 
-	// @Named provides access the return value via the EL variable name "customers"
+	// @Named provides access the return value via the EL variable name
+	// "customers"
 	// in the UI (e.g.
 	// Facelets or JSP view)
 	@Named
@@ -82,6 +85,11 @@ public class CustomerService {
 	public List<CustomerBean> findAll() {
 		List<Customer> customers = customerRepository.findAll();
 		return mapper.toDTO(customers);
+	}
+
+	public Optional<CustomerBean> findById(UUID id) {
+		Optional<Customer> customer = customerRepository.findOne(id);
+		return customer.map(mapper::toDTO);
 	}
 
 	/**
