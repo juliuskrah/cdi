@@ -50,6 +50,7 @@ public class CustomerService {
 	 * @param customer
 	 * @return
 	 */
+	@AccountOpeningInterceptor
 	public CustomerBean createCustomer(CustomerBean customer) {
 		Customer c = mapper.toEntity(customer);
 		customerRepository.save(c);

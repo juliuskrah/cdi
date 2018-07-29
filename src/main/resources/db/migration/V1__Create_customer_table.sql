@@ -8,7 +8,8 @@ create table CUSTOMER (
     STATE varchar(100),
     ZIP bigint,
     PHONE varchar(10),
-    EMAIL varchar(100)
+    EMAIL varchar(100),
+    BALANCE DECIMAL (4, 2)
 );
 
 alter table if exists CUSTOMER add constraint CUSTOMER_PK primary key(ID);

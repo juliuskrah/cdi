@@ -27,6 +27,7 @@ public class Customer implements Serializable {
 	private Integer zip;
 	private String phone;
 	private String email;
+	private double balance;
 
 	public UUID getId() {
 		return id;
@@ -106,5 +107,13 @@ public class Customer implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
 	}
 }

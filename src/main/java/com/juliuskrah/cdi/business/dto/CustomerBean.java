@@ -33,6 +33,7 @@ public class CustomerBean implements Serializable {
 	private String telephone;
 	@Size(max = 100)
 	private String email;
+	private double balance;
 
 	public UUID getId() {
 		return id;
@@ -114,10 +115,18 @@ public class CustomerBean implements Serializable {
 		this.email = email;
 	}
 
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerBean [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", middleInitial="
 				+ middleInitial + ", street=" + street + ", city=" + city + ", state=" + state + ", zip=" + zip
-				+ ", telephone=" + telephone + ", email=" + email + "]";
+				+ ", telephone=" + telephone + ", email=" + email + ", balance=" + balance + "]";
 	}
 }
