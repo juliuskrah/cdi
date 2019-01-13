@@ -2,11 +2,9 @@
 This is a Wildfly-Swarm project that uses the following fractions
 1. JPA
 2. JSF
-3. JAX-RS
-4. MVC (Ozark)
-5. CDI
-6. Bean Validation
-7. FLyway (Database Migrations)
+3. CDI
+4. Bean Validation
+5. Flyway (Database Migrations)
 
 You can start it from the commandline using `mvn clean wildfly-swarm:run`.
 
