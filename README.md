@@ -8,9 +8,6 @@ This is a Wildfly-Swarm project that uses the following fractions
 6. Bean Validation
 7. FLyway (Database Migrations)
 
-I have tested it to run successfully in Eclipse by runnig the main class `org.wildfly.swarm.Swarm`.
+You can start it from the commandline using `mvn clean wildfly-swarm:run`.
 
-When I run in IntelliJ, I get stackoverflow error when I access the main route on `\`. Same problem when running
-from the commandline using `mvn clean wildfly-swarm:run`.
-
-Let me know if you have been successful running it outside eclipse.
+I have published a [step by step](https://juliuskrah.com/blog/2018/05/25/exploring-apache-deltaspike-data-module/) guide on my blog.
