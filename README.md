@@ -10,7 +10,9 @@ This is a Wildfly-Swarm project that uses the following fractions
 
 I have tested it to run successfully in Eclipse by runnig the main class `org.wildfly.swarm.Swarm`.
 
-When I run in IntelliJ, I get stackoverflow error when I access the main route on `\`. Same problem when running
-from the commandline using `mvn clean wildfly-swarm:run`.
+When I run in IntelliJ, I get `StackOverflow` error when I access the main route on `\`. Same problem when running
+from the commandline using `mvn clean thorntail:run`.
+
+I have published a [step by step](https://juliuskrah.com/blog/2018/05/18/a-beginner-s-guide-to-cdi/) guide on my blog.
 
 Let me know if you have been successful running it outside eclipse.
